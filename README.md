@@ -21,24 +21,24 @@ To get a local copy up and running follow these simple steps.
 ### Installation
 
 1. Clone the repository
-  ```bach
-  git clone https://github.com/ismailza/node-swapi.git
-  ```
+    ```git
+    git clone https://github.com/ismailza/node-swapi.git
+    ```
 
 2. Navigate to the project directory
-  ```bash
-  cd node-swapi
-  ```
+    ```bash
+    cd node-swapi
+    ```
 
 3. Build the Docker image
-  ```bash
-  docker build -t node-swapi .
-  ```
+    ```bash
+    docker build -t node-swapi .
+    ```
 
 4. Run the Docker container
-  ```bash
-  docker run -p 3000:3000 node-swapi
-  ```
+    ```bash
+    docker run -p 3000:3000 node-swapi
+    ```
   The `-p 3000:3000` flag maps port 3000 on the host to port 3000 on the container.
 
 The application should now be running in the Docker container.
@@ -50,19 +50,19 @@ The application should now be running in the Docker container.
 If you prefer to run the application without Docker, follow these steps:
 
 1. Navigate to the project directory
-  ```bash
-  cd node-swapi
-  ```
+    ```bash
+    cd node-swapi
+    ```
 
 2. Install dependencies
-  ```bash
-  npm install
-  ```
+    ```bash
+    npm install
+    ```
 
 3. Start the server
-  ```bash
-  node app/index.js
-  ```
+    ```bash
+    node app/index.js
+    ```
 
 The application should now be running at `http://localhost:3000`
 
