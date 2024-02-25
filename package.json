@@ -1,0 +1,29 @@
+{
+  "name": "node-swapi",
+  "version": "1.0.0",
+  "description": "A simple Node.js web application that uses the SWAPI (Star Wars API) to display films and people. Containerized with Docker for easy deployment and scalability.",
+  "main": "app/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ismailza/node-swapi.git"
+  },
+  "keywords": [
+    "films",
+    "api"
+  ],
+  "author": "Ismail ZAHIR",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ismailza/node-swapi/issues"
+  },
+  "homepage": "https://github.com/ismailza/node-swapi#readme",
+  "dependencies": {
+    "axios": "^1.6.7",
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "path": "^0.12.7"
+  }
+}

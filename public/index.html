@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Node SWAPI</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+
+<body>
+  <div class="container py-3">
+    <header>
+      <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+        <a href="/" class="d-flex align-items-center link-body-emphasis text-decoration-none">
+          <span class="fs-4">
+            Node SWAPI
+          </span>
+        </a>
+
+        <ul class="nav nav-pills d-inline-flex mt-md-0 ms-md-auto">
+          <li class="nav-item">
+            <a class="nav-link" id="films-link" href="#">Films</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="people-link" href="#">People</a>
+          </li>
+        </ul>
+
+        <div class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+          <a class="py-2 link-body-emphasis text-decoration-none" href="https://github.com/ismailza/films-app"
+            target="_blank">
+            Ismail ZAHIR &nbsp;<i class="fa-brands fa-github"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+        <h1 class="display-4 fw-normal text-body-emphasis mb-5">
+          Node SWAPI
+        </h1>
+        <p class="fs-5 text-body-secondary">
+          A simple <span class="text-body-emphasis">Node.js</span> web application that uses the <a
+            href="https://swapi.dev/" target="_blank">SWAPI</a> (Star Wars API) to display films and people.
+          Containerized with <span class="text-body-emphasis">Docker</span> for easy deployment and scalability.
+        </p>
+        <p class="fs-5 text-body-secondary">
+          It's built with <span class="text-body-emphasis">Node.js</span> for the backend,
+          <span class="text-body-emphasis">Express</span> for server-side logic, <span
+            class="text-body-emphasis">Axios</span>
+          for API requests, along with <span class="text-body-emphasis">Bootstrap, Vanilla JS</span>, and <span
+            class="text-body-emphasis">Font Awesome</span> for the
+          front-end. <span class="text-body-emphasis">Docker</span> simplifies setup and ensures consistency across
+          environments.
+        </p>
+      </div>
+    </header>
+  </div>
+
+  <div class="container">
+    <div id="response" class="row d-flex justify-content-center">
+      <!-- API response will be displayed here -->
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
