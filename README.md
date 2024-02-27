@@ -19,8 +19,15 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-- [Docker](https://www.docker.com/products/docker-desktop) (if you want to run the application in a container)
-- [Node.js](https://nodejs.org/en/download/) (if you want to run the application without Docker)
+- [Docker](https://www.docker.com/products/docker-desktop)
+- [Node.js](https://nodejs.org/en/download/) (optional if you want to run the application without Docker)
+- [MongoDB](https://www.mongodb.com/try/download/community) 
+
+    Pull the MongoDB Docker image and run a container:
+    ```bash
+        docker pull mongo
+        docker run -d -p 27017:27017 --name mongodb mongo
+    ```
 
 ### Installation
 
@@ -41,34 +48,16 @@ To get a local copy up and running follow these simple steps.
 
 4. Run the Docker container
     ```bash
-    docker run -p 3000:3000 node-swapi
+    docker run -p 3000:3000 -d node-swapi --link mongodb:mongodb
     ```
+
+    Note: Change `mongodb` to the name of your MongoDB container if you are using a different name.
+
   The `-p 3000:3000` flag maps port 3000 on the host to port 3000 on the container.
 
 The application should now be running in the Docker container.
 
 5. Open your browser and navigate to `http://localhost:3000`
-
-### Development Setup (without Docker)
-
-If you prefer to run the application without Docker, follow these steps:
-
-1. Navigate to the project directory
-    ```bash
-    cd node-swapi
-    ```
-
-2. Install dependencies
-    ```bash
-    npm install
-    ```
-
-3. Start the server
-    ```bash
-    node app/index.js
-    ```
-
-The application should now be running at `http://localhost:3000`
 
 ## Contributing
 
