@@ -75,7 +75,22 @@ app.post('/favorites', async (req, res) => {
   }
 });
 
-mongoose.connect('mongodb://localhost:27017/swfavorites', { useNewUrlParser: true })
+app.delete('/favorites/:id', async (req, res) => {
+  const favId = req.params.id;
+
+  try {
+    const favorite = await Favorite.findById(favId);
+    if (!favorite) {
+      return res.status(404).json({ message: 'Favorite not found!' });
+    }
+    await favorite.remove();
+    res.status(200).json({ message: 'Favorite removed!' });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+mongoose.connect('mongodb://172.17.0.2:27017/swfavorites', { useNewUrlParser: true })
   .then(() => {
     console.log('Connected to MongoDB');
   })

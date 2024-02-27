@@ -62,7 +62,7 @@ const displayFilms = (movies) => {
     card.classList.add('card', 'm-2');
     card.style.width = '25rem';
     card.innerHTML = `
-      <div class="card-header">
+      <div class="card-header d-flex justify-content-between align-items-center">
         <h5 class="card-title">${movie.title}</h5>
       </div>
       <div class="card-body">
@@ -140,8 +140,9 @@ const displayFavorites = (favorites) => {
     card.classList.add('card', 'm-2');
     card.style.width = '25rem';
     card.innerHTML = `
-      <div class="card-header">
+      <div class="card-header d-flex justify-content-between align-items-center">
         <h5 class="card-title">${favorite.name}</h5>
+        <button type="button" data-id="${favorite._id}" class="favorite-rm-btn btn-close" aria-label="Close"></button>
       </div>
       <div class="card-body">
         <h6 class="card-subtitle mb-2 text-body-secondary">Type: ${favorite.type}</h6>
@@ -253,6 +254,28 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .catch(handleError => {
           alert('Error:', handleError);
+        });
+    }
+  });
+
+  document.body.addEventListener('click', (event) => {
+    if (event.target && event.target.classList.contains('favorite-rm-btn')) {
+      const favId = event.target.getAttribute('data-id');
+      alert(`Remove favorite: ${favId}`);
+      fetch(`/favorites/${favId}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      })
+        .then(response => response.json())
+        .then(data => {
+          alert('Favorite removed:', data);
+          getFavorites();
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          alert('Error:', error);
         });
     }
   });
