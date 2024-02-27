@@ -2,6 +2,10 @@
 
 This repository contains a simple Node.js web application that utilizes the [Star Wars API (SWAPI)](https://swapi.dev/) to display information about Star Wars films and characters. The application is built with Express for server-side logic, Axios for making API requests, and integrates Bootstrap, Vanilla JavaScript, and Font Awesome for the frontend. Containerized with Docker, it offers easy deployment and scalability, ensuring consistency across different environments.
 
+![Alt text](public/screenshots/screencapture-localhost-3000-2024-02-27-16_38_50.png)
+
+
+
 ## Features
 
 - Display a list of Star Wars films and people from the SWAPI.
